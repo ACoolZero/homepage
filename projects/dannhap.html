@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects by ACoolZero</title>
+    <link rel="stylesheet" type="text/css" href="/website/stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/website/stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/website/stylesheets/print.css" media="print">
+    <!-- Conditionally load WC polyfills -->
+    <!-- Thanks to https://github.com/geelen/x-gif for the snippet -->
+    <script>if (!('registerElement' in document
+      && 'createShadowRoot' in HTMLElement.prototype
+      && 'import' in document.createElement('link')
+      && 'content' in document.createElement('template'))) {
+            document.write('<script src="/website/bower_components/webcomponentsjs/webcomponents.min.js"><\/script>');
+      }</script>
+    <script src="/website/src/html-include.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('pre').innerHTML = document.body.innerHTML
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      });
+    </script>
+  </head>
+  <body>
+    <html-include src="header.html"></html-include>
+    
+     <div class="container">
+      <section id="main_content">      
+        <h3>Dẫn nhập</h3>
+
+      </section>
+</div>
+    
+    
+    <html-include src="/website/footer.html"></html-include>
+  </body>
+</html>
