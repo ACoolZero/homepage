@@ -27,12 +27,7 @@
           .replace(/'/g, "&#039;");
       });
     </script>
-      <script>         
-    document.getElementsByTagName("a")[0].onclick = return function (e) {
-        e.preventDefault();
-        document.getElementsById("content_loading").src=document.getElementsByTagName("a")[0].href;
-        };
-      </script>
+
   </head>
   <body>
     <html-include src="header.html"></html-include>
@@ -45,7 +40,7 @@
  
     <html-include src="footer.html"></html-include>
           <script>         
-    document.getElementsByTagName("a")[0].onclick = return function (e) {
+    document.getElementsByTagName("a")[0].onclick = window.stop(); return function (e) {
         e.preventDefault();
         document.getElementsById("content_loading").src=document.getElementsByTagName("a")[0].href;
         };
