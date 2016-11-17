@@ -28,7 +28,7 @@
       });
     </script>
       <script>         
-    document.getElementsByTagName("a")[0].onclick = window.stop(); function (e) {
+    document.getElementsByTagName("a")[0].onclick = return function (e) {
         e.preventDefault();
         document.getElementsById("content_loading").src=document.getElementsByTagName("a")[0].href;
         };
@@ -44,5 +44,11 @@
 </div>
  
     <html-include src="footer.html"></html-include>
+          <script>         
+    document.getElementsByTagName("a")[0].onclick = return function (e) {
+        e.preventDefault();
+        document.getElementsById("content_loading").src=document.getElementsByTagName("a")[0].href;
+        };
+      </script>
   </body>
 </html>
