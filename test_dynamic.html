@@ -1,25 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>DHTML example</title>
+        <title>Using a DOM function</title>
+        <style>
+            a {background-color:#eee;}
+            a:hover {background:#ff0;}
+            #toggleMe {background:#cfc; display:none; margin:30px 0; padding:1em;}
+        </style>
     </head>
     <body>
-        <div id="navigation"></div>
+        <h1>Using a DOM function</h1>
+
+        <h2><a id="showhide" href="#">Show paragraph</a></h2>
+
+        <p id="toggleMe">This is the paragraph that is only displayed on request.</p>
+
+        <p>The general flow of the document continues.</p>
 
         <script>
-            var init = function () {
-                myObj = document.getElementById("navigation");
-                // ... manipulate myObj
+            changeDisplayState = function (id) {
+                var d = document.getElementById('showhide'),
+                    e = document.getElementById(id);
+                if (e.style.display === 'none' || e.style.display === '') {
+                    e.style.display = 'block';
+                    d.innerHTML = 'Hide paragraph';
+                } else {
+                    e.style.display = 'none';
+                    d.innerHTML = 'Show paragraph';
+                }
             };
-            window.onload = init;
+            document.getElementById('showhide').onclick = function () {
+                changeDisplayState('toggleMe');
+                return false;
+            };
         </script>
-
-        <!--
-        Often the code is stored in an external file; this is done
-        by linking the file that contains the JavaScript.
-        This is helpful when several pages use the same script:
-        -->
-        <script src="myjavascript.js"></script>
     </body>
 </html>
