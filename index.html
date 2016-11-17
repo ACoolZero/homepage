@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>&lt;html-include&gt; demo</title>
+    <title>Homepage by ACoolZero</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
     <!-- Conditionally load WC polyfills -->
     <!-- Thanks to https://github.com/geelen/x-gif for the snippet -->
     <script>if (!('registerElement' in document
@@ -13,7 +16,6 @@
       && 'content' in document.createElement('template'))) {
             document.write('<script src="bower_components/webcomponentsjs/webcomponents.min.js"><\/script>');
       }</script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <script src="src/html-include.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
@@ -28,11 +30,17 @@
   </head>
   <body>
     <html-include src="header.html"></html-include>
-    <div class="container">
-      <h1>&lt;html-include&gt;</h1>
-      <p>This is how the DOM looks like at the <strong>DOMContentLoaded</strong> event (before inserting the content of &lt;pre&gt;).<br>Compare it against the raw HTML source.</p>
-      <pre></pre>
-    </div>
+    
+     <div class="container">
+      <section id="main_content">
+        <h3>
+          <a id="welcome-to-hompage" class="anchor" href="#welcome-to-hompage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>History of home pages</h3>
+        <p>In the early days of the World Wide Web in the first half of the 1990s, an important part of web pages belonged to students or teachers with a UNIX account in their university. System administrators of such systems installed an HTTP server pointing its root directory to the directory containing the users accounts. On UNIX, the base directory of an account is called "home", and the HOME environment variable contains its path (for example <a>/home/my_username</a>). The URL of the home page is usually has the format <a>https://example.edu/~my_username/</a>. Thus the term home page appeared and then spread to its current usage.</p>
+        <p>A personal home page historically has served as a means of self-portrayal, job-related presentation, and pure enjoyment, giving way to professional advancement and social interaction. Owing to the rise of social media sites, personal home pages are no longer as common as during the mid-late 1990s and early-2000s.</p>
+      </section>
+</div>
+    
+    
     <html-include src="footer.html"></html-include>
   </body>
 </html>
