@@ -28,7 +28,7 @@
       });
     </script>
       <script>         
-    document.getElementsByTagName("a")[0].onclick = function (e) {
+    document.getElementsByTagName("a")[0].onclick = return function (e) {
         e.preventDefault();
         document.getElementsById("content_loading").src=document.getElementsByTagName("a")[0].href;
         };
@@ -39,7 +39,7 @@
     
      <div class="container">
       <section id="main_content">
-          <html-include id="content_loading" src=""></html-include>
+          <html-include id="content_loading" src="body.ctn"></html-include>
       </section>
 </div>
  
