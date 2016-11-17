@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>DHTML example</title>
+    </head>
+    <body>
+        <div id="navigation"></div>
+
+        <script>
+            var init = function () {
+                myObj = document.getElementById("navigation");
+                // ... manipulate myObj
+            };
+            window.onload = init;
+        </script>
+
+        <!--
+        Often the code is stored in an external file; this is done
+        by linking the file that contains the JavaScript.
+        This is helpful when several pages use the same script:
+        -->
+        <script src="myjavascript.js"></script>
+    </body>
+</html>
