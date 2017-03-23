@@ -37,7 +37,7 @@ function timeElapse(date){
   var now = new Date().getTime();
 
   // Find the distance between now an the count down date
-  var distance = date - now;
+  var distance = now-date;
 
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
