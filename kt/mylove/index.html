@@ -26,6 +26,8 @@
 		 <div id="error">
 		     Trình duyệt của bạn không được hỗ trợ. Bạn nên sử dụng (<a href="http://www.google.com/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)
 		 </div>
+		    <div id="playlist" style="display: none;">
+		    </div>
             <div id="wrap">
                 <div id="text">
 			        <div id="code">
@@ -218,8 +220,7 @@
 		    var iframe = document.createElement('iframe');
 		    var url = "https://www.youtube.com/embed/?listType=playlist&list=PLsBwWQkOtT2LdZWoMmK3ygK_zp_EPEsyh&autoplay=1&loop=1&index="+Math.floor((Math.random() * 37) + 0);
 		    iframe.src = url;
-		    iframe.hidden="true";
-		    document.body.appendChild(iframe);
+		    document.getElementById("playlist").appendChild(iframe);
 	    </script>
 </body>
 </html>
