@@ -21,7 +21,7 @@
 <meta http-equiv=”Expires” content=”-1″>
 <meta http-equiv=”CACHE-CONTROL” content=”NO-CACHE”>
 </head>
-    <body>
+    <body onLoad="window.scrollTo(0, document.body.scrollHeight)">
 	    <div id="main">
 		 <div id="error">
 		     Trình duyệt của bạn không được hỗ trợ. Bạn nên sử dụng (<a href="http://www.google.com/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)
@@ -220,8 +220,6 @@
 		    iframe.src = url;
 		    iframe.hidden="true";
 		    document.body.appendChild(iframe);
-		    
-		    document.body.scrollTop = document.body.scrollHeight;
 	    </script>
 </body>
 </html>
