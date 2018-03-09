@@ -25,8 +25,8 @@
 	    <script>
 		    
 		    var url = "https://www.youtube.com/embed/?listType=playlist&list=PLsBwWQkOtT2LdZWoMmK3ygK_zp_EPEsyh&autoplay=1&index="+Math.floor((Math.random() * 37) + 0);
-		    var song = document.createTextNode("<iframe width='0' height='0' src='"+ url +"' frameborder='0' allowfullscreen>");
-		    document.getElementsByTagName("body")[0].appendChild(song);
+		    var song = document.writeln("<iframe width='0' height='0' src='"+ url +"' frameborder='0' allowfullscreen>");
+		    //document.getElementsByTagName("body")[0].appendChild(song);
 	    </script>
         <div id="main">
             <div id="error">Trình duyệt của bạn không được hỗ trợ. Bạn nên sử dụng (<a href="http://www.google.com/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)</div>
