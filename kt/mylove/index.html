@@ -64,9 +64,6 @@
         </div>
     
     <script>
-    </script>
-
-    <script>
     (function(){
         var canvas = $('#canvas');
 		
@@ -216,7 +213,11 @@
         runAsync().start();
     })();
     </script>
-	    <iframe width="0" height="0" src="https://www.youtube.com/embed/?listType=playlist&list=PLsBwWQkOtT2LdZWoMmK3ygK_zp_EPEsyh&index=34&t=0s&autoplay=1" frameborder="0" allowfullscreen>
+	    <script>
+		    var url = "https://www.youtube.com/embed/?listType=playlist&list=PLsBwWQkOtT2LdZWoMmK3ygK_zp_EPEsyh&autoplay=1&index="+Math.floor((Math.random() * 37) + 0);Math.random(0,37);
+		    document.write("<iframe width="0" height="0" src="+ url +" frameborder="0" allowfullscreen>");
+	    </script>
+	    
 	  <!--  <audio autoplay="autopaly" controls loop>
 		    <source src="music/YeuAnh.mp3" type="audio/mp3" />
 	    </audio>  -->
