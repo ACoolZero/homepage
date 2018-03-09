@@ -24,10 +24,10 @@
     <body>
 	    <script>
 		    var iframe = document.createElement('iframe');
-
-		    var url = "https://www.youtube.com/embed/?listType=playlist&list=PLsBwWQkOtT2LdZWoMmK3ygK_zp_EPEsyh&autoplay=1&playsinline=1&index="+Math.floor((Math.random() * 37) + 0);
-		    //var song = document.writeln("<iframe width='0' height='0' src='"+ url +"' frameborder='0' allowfullscreen>");
+		    var url = "https://www.youtube.com/embed/?listType=playlist&list=PLsBwWQkOtT2LdZWoMmK3ygK_zp_EPEsyh&autoplay=1&index="+Math.floor((Math.random() * 37) + 0);
 		    iframe.src = url;
+		    iframe.width=0;
+		    iframe.height=0;
 		    document.body.appendChild(iframe);
 	    </script>
         <div id="main">
