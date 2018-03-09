@@ -22,8 +22,6 @@
 <meta http-equiv=”CACHE-CONTROL” content=”NO-CACHE”>
 </head>
     <body>
-        <div id="main">
-            <div id="error">Trình duyệt của bạn không được hỗ trợ. Bạn nên sử dụng (<a href="http://www.google.com/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)</div>
              <div id="wrap">
                 <div id="text">
 			        <div id="code">
@@ -60,9 +58,7 @@
               </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
             </div>
-            
-        </div>
-    
+   
     <script>
     (function(){
         var canvas = $('#canvas');
@@ -220,7 +216,7 @@
 		    iframe.width=0;
 		    iframe.height=0;
 		    iframe.frameborder=0;
-		    document.getElementById("main").appendChild(iframe);
+		    document.getElementById("wrap").appendChild(iframe);
 	    </script>
 </body>
 </html>
