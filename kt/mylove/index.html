@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -34,7 +34,12 @@
 	    </center>
         <div id="wrap">
             <div id="text">
+                <div id="diary">
+                    <button onclick="previous()">Trước</button>
+                    <button onclick="next()">Sau</button>
+                </div>
 		        <div id="code">
+                <!--
                     <p>
                         <font color="#0000FF">
                             <span class="say">Em này, </span><br>
@@ -59,6 +64,7 @@
                             <span class="say"><span class="space"></span>-- Yêu em thật nhiều.. moazzz :*</span>
                         </font>
                     </p>
+                -->
                 </div>
             </div>
             <div id="clock-box">
@@ -227,6 +233,30 @@
 	    iframe.width = "90%";
 	    iframe.height = "1";
 	    document.getElementById("playlist").appendChild(iframe);
+    </script>
+    <script type="text/javascript">
+        var here = 2; //latest letter
+        funtion appendDiary{
+            var iframe = document.createElement('iframe');
+            iframe.src = window.location.href + "diary/" + here + ".html";
+            iframe.frameBorder = 0;
+            iframe.id = "diary";
+            document.getElementById('code').appendChild(iframe);
+        }
+        appendDiary();
+
+        funtion previous(){
+            var iframe = document.getElementById('diary');
+            here--;
+            iframe.src = window.location.href + "diary/" + here + ".html";
+            iframe.contentWindow.location.reload();
+        }
+        funtion next(){
+            var iframe = document.getElementById('diary');
+            here++;
+            iframe.src = window.location.href + "diary/" + here + ".html";
+            iframe.contentWindow.location.reload();
+        }
     </script>
 </body>
 </html>
