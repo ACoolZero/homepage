@@ -2,18 +2,18 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="icon" type="image/png" href="image/favicon.ico">
-	<title>Anh <3 Em</title>	    
+    <link rel="icon" type="image/png" href="image/favicon.ico">
+    <title>Anh <3 Em</title>        
     <link type="text/css" rel="stylesheet" href="./renxi/default.css">
-	<script type="text/javascript" src="./renxi/jquery.min.js"></script>
-	<script type="text/javascript" src="./renxi/jscex.min.js"></script>
-	<script type="text/javascript" src="./renxi/jscex-parser.js"></script>
-	<script type="text/javascript" src="./renxi/jscex-jit.js"></script>
-	<script type="text/javascript" src="./renxi/jscex-builderbase.min.js"></script>
-	<script type="text/javascript" src="./renxi/jscex-async.min.js"></script>
-	<script type="text/javascript" src="./renxi/jscex-async-powerpack.min.js"></script>
-	<script type="text/javascript" src="./renxi/functions.js" charset="utf-8"></script>
-	<script type="text/javascript" src="./renxi/love.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./renxi/jquery.min.js"></script>
+    <script type="text/javascript" src="./renxi/jscex.min.js"></script>
+    <script type="text/javascript" src="./renxi/jscex-parser.js"></script>
+    <script type="text/javascript" src="./renxi/jscex-jit.js"></script>
+    <script type="text/javascript" src="./renxi/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="./renxi/jscex-async.min.js"></script>
+    <script type="text/javascript" src="./renxi/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="./renxi/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./renxi/love.js" charset="utf-8"></script>
     <style type="text/css">
     <!--
         .STYLE1 {color: #666666}
@@ -28,43 +28,18 @@
         <div id="error">
             Trình duyệt của bạn không được hỗ trợ. Bạn nên sử dụng (<a href="http://www.google.com/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)
         </div>
-	    <center>
-		    <div id="playlist">
-		    </div>
-	    </center>
+        <center>
+            <div id="playlist">
+            </div>
+        </center>
         <div id="wrap">
             <div id="text">
-                <div id="diary">
-                    <button onclick="previous()">Trước</button>
-                    <button onclick="next()">Sau</button>
-                </div>
-		        <div id="code">
-                <!--
-                    <p>
-                        <font color="#0000FF">
-                            <span class="say">Em này, </span><br>
-    						<span class="say"> </span><br>
-    						<span class="say">^_^ Em là người con gái anh yêu !! </span><br>
-    						<span class="say">Không phải chỉ bởi.. </span><br>
-    						<span class="say">Em xinh đẹp đến nỗi anh như bị sét tình đánh, </span><br>
-    						<span class="say">Hay những biểu cảm đáng yêu kia, </span><br>
-    						<span class="say">..em dành cho anh !! </span><br>
-    				     	<span class="say"> </span><br>
-    				      	<span class="say">..mà còn bởi.. </span><br>
-    				      	<span class="say">Em hiểu anh !! </span><br>
-    						<span class="say">Em quan tâm anh !! </span><br>						
-    						<span class="say">Em làm tình làm tội anh >.< </span><br>
-    						<span class="say">Em khiến anh yêu em từ ngày này sang ngày kia.. </span><br>
-    						<span class="say">..cũng cắn,cấu,xé bầm anh ngày này qua ngày khác </span><br>
-    						<span class="say"> </span><br>
-			      			<span class="say">Em là một điều kỳ lạ nhất từng xuất hiện trong anh </span><br>
-                            <span class="say">Vậy hãy cứ tin em nhé.. </span><br>
-				      		<span class="say">"Rồi đây e cũng sẽ phải về ở đợ nhà anh" </span><br>
-                            <span class="say"> </span><br>
-                            <span class="say"><span class="space"></span>-- Yêu em thật nhiều.. moazzz :*</span>
-                        </font>
-                    </p>
-                -->
+                <div id="nav">
+                    <button id="previous" onclick="previous()" style="float: left;">Trước</button>
+                    <button id="next" onclick="next()" style="float: right;" disabled>Sau</button>
+                </div><br>
+                <div id="code">
+                    <p>This is placeholder</p>
                 </div>
             </div>
             <div id="clock-box">
@@ -77,8 +52,58 @@
     </div>
     <script>
         (function(){
+            var iframe = document.createElement('iframe');
+            var url = "https://www.youtube.com/embed/?listType=playlist&list=PLsBwWQkOtT2LdZWoMmK3ygK_zp_EPEsyh&autoplay=1&loop=1&index="+Math.floor((Math.random() * 37) + 0);
+            iframe.src = url;
+            iframe.frameBorder = 0;
+            iframe.width = "90%";
+            iframe.height = "1";
+            document.getElementById("playlist").appendChild(iframe);
+        })();
+    </script>
+    <script>
+        var latest = 2;
+        var here = latest;
+        (function(){
+            var iframe = document.createElement('iframe');
+            iframe.src = "./diary/" + here.toString() + ".html";
+            iframe.id = "diary";
+            iframe.frameBorder = "0";
+            iframe.height = "0";
+            iframe.width = "0";
+            document.getElementById('text').appendChild(iframe);
+        })();  
+        function previous(){
+            here--;
+            var iframe = document.getElementById('diary');            
+            iframe.src = "./diary/" + here.toString() + ".html";
+            iframe.reload;
+            var code = $("#code");
+            code.hide();
+            code.html($("#diary").contents().find("body").html());
+            code.show("fast",function(){
+            document.getElementById('next').disabled=false;
+            if(here <= 1)
+                document.getElementById('previous').disabled=true;}).typewriter();
+        }
+        function next(){
+            here++;
+            var iframe = document.getElementById('diary');
+            iframe.src = "./diary/" + here.toString() + ".html";
+            iframe.reload;
+            var code = $("#code");
+            code.hide();
+            code.html($("#diary").contents().find("body").html());
+            code.show("fast",function(){
+            document.getElementById('next').disabled=false;
+            if(here <= 1)
+                document.getElementById('previous').disabled=true;}).typewriter();
+        }
+    </script>
+    <script>
+        (function(){
             var canvas = $('#canvas');
-    		
+            
             if (!canvas[0].getContext) {
                 $("#error").show();
                 return false;        }
@@ -163,14 +188,14 @@
 
             var growAnimate = eval(Jscex.compile("async", function () {
                 do {
-        	        tree.grow();
+                    tree.grow();
                     $await(Jscex.Async.sleep(10));
                 } while (tree.canGrow());
             }));
 
             var flowAnimate = eval(Jscex.compile("async", function () {
                 do {
-        	        tree.flower(2);
+                    tree.flower(2);
                     $await(Jscex.Async.sleep(10));
                 } while (tree.canFlower());
             }));
@@ -200,10 +225,8 @@
                 }
             }));
 
-            var textAnimate = eval(Jscex.compile("async", function () {	
-    		var together = new Date("Mar 22, 2015 0:0:1").getTime();	
-    			
-    		    $("#code").show().typewriter();
+            var clockAnimate = eval(Jscex.compile("async", function () { 
+                var together = new Date("Mar 22, 2015 0:0:1").getTime();    
                 $("#clock-box").fadeIn(500);
                 while (true) {
                     timeElapse(together);
@@ -211,52 +234,26 @@
                 }
             }));
 
+            function textAnimate(){
+                $("#code").html($("#diary").contents().find("body").html());
+                $("#code").show("fast").typewriter();
+                $("#nav").show();
+            }
+
             var runAsync = eval(Jscex.compile("async", function () {
                 $await(seedAnimate());
                 $await(growAnimate());
                 $await(flowAnimate());
                 $await(moveAnimate());
 
-                textAnimate().start();
+                clockAnimate().start();
+                textAnimate();
 
                 $await(jumpAnimate());
             }));
 
             runAsync().start();
         })();
-    </script>
-    <script>
-	    var iframe = document.createElement('iframe');
-	    var url = "https://www.youtube.com/embed/?listType=playlist&list=PLsBwWQkOtT2LdZWoMmK3ygK_zp_EPEsyh&autoplay=1&loop=1&index="+Math.floor((Math.random() * 37) + 0);
-	    iframe.src = url;
-	    iframe.frameBorder = 0;
-	    iframe.width = "90%";
-	    iframe.height = "1";
-	    document.getElementById("playlist").appendChild(iframe);
-    </script>
-    <script type="text/javascript">
-        var here = 2; //latest letter
-        funtion appendDiary{
-            var iframe = document.createElement('iframe');
-            iframe.src = window.location.href + "diary/" + here + ".html";
-            iframe.frameBorder = 0;
-            iframe.id = "diary";
-            document.getElementById('code').appendChild(iframe);
-        }
-        appendDiary();
-
-        funtion previous(){
-            var iframe = document.getElementById('diary');
-            here--;
-            iframe.src = window.location.href + "diary/" + here + ".html";
-            iframe.contentWindow.location.reload();
-        }
-        funtion next(){
-            var iframe = document.getElementById('diary');
-            here++;
-            iframe.src = window.location.href + "diary/" + here + ".html";
-            iframe.contentWindow.location.reload();
-        }
     </script>
 </body>
 </html>
