@@ -19,9 +19,7 @@
 	</script>
 
 	<style type="text/css">
-		body {
-			background-color: black;
-			color: #00ff00;			
+		body {	
 			font-family: "Helvetica", Arial, san-serif;
 		}
 		div {
@@ -39,7 +37,8 @@
 			padding:5px;
 			padding-top:10px;
 		}
-		#btn {
+		.btn {
+			float: right;
 			padding: 10px;
 			font-size: 16px;
 			border-radius: 5px;
@@ -56,6 +55,11 @@
 		}
 	</style>
 	<script type="text/javascript">
+		function getBack(){
+			$("body").css("background-color", "black");
+			$("body").css("color","#00ff00");
+			$("#wakeup").hide();
+		}
 		async function Nowtime() {
 			var currentdate = new Date();
 			var datetime = "Current time: " +
@@ -74,7 +78,7 @@
 		}
 		function getAlarm() {
 			// $("#date").val(Cookies.get("date"));
-			if (Cookies.get("time") == "")
+			if (Cookies.get("time") == null)
 				$("#time").val("07:00");
 			else
 				$("#time").val(Cookies.get("time"));
@@ -84,8 +88,9 @@
 			var now = new Date();
 			if(time == now.toLocaleTimeString()){
 				$("body").css("background-color", "orange");
+				$("body").css("color","white");
 				mp3Playlist();
-				$("#wakeup").text("WAKE UP !!");
+				$("#wakeup").show();
 			}
 		}
 		function onTimeChange(time) {
@@ -116,9 +121,10 @@
             iframe.reload;
         }
 		$(document).ready(function (){
+			getBack();
 			setInterval("Nowtime()", 1000);
 			getAlarm();
-			$("#btn").click(function(){
+			$("#setBtn").click(function(){
 				setAlarm();
 			});
 		});
@@ -141,7 +147,7 @@
 							<input id="time" type="time" name="alarmTime">
 						</td>
 						<td>
-							<input id="btn" type="button" name="setAlarm" value="Set alarm">
+							<input id="setBtn" class="btn" type="button" name="setAlarm" value="Set alarm">
 						</td>
 					</table>
 					<p>Powered by npc.Argus</p>
@@ -152,7 +158,10 @@
 	        </div>
 		</td></tr>
 		<tr><td style="padding-top:100px">
-				<center><h1 id="wakeup" style="font-size: 48px;"></h1></center>
+				<div id="wakeup" style="display: none">
+					<center><h1 style="font-size: 48px;">WAKE UP!!</h1></center>
+					<button class="btn" onclick="getBack();" >Too bright!!</button>
+				</div>
 		</td></tr>
 	</table>
 </body>
