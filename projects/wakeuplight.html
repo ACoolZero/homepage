@@ -74,7 +74,10 @@
 		}
 		function getAlarm() {
 			// $("#date").val(Cookies.get("date"));
-			$("#time").val(Cookies.get("time"));
+			if (Cookies.get("time") == "")
+				$("#time").val("07:00");
+			else
+				$("#time").val(Cookies.get("time"));
 			setAlarm();
 		}
 		async function checker(time) {
