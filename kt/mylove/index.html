@@ -249,6 +249,7 @@
             }));
             
             function textAnimate() {                
+                setRandomColor();                
                 $("#code").html($("#diary").contents().find("body").html());
                 $("#code").show("fast").typewriter();
                 $("#nav").show();
@@ -260,9 +261,9 @@
                 $await(flowAnimate());
                 $await(moveAnimate());
 
-                clockAnimate().start();                
-                setRandomColor();
+                clockAnimate().start();
                 textAnimate();
+                
                 $await(jumpAnimate());
             }));
 
