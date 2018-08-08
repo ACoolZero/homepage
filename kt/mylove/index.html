@@ -86,7 +86,7 @@
             var code = $("#code");
             code.html('');
             code.html($("#diary").contents().find("body").html());
-            code.show("fast",function(){
+            code.stop(true,true).show("fast",function(){
             document.getElementById('next').disabled=false;
             if(here <= 1)
                 document.getElementById('previous').disabled=true;}).typewriter();
@@ -100,7 +100,7 @@
             var code = $("#code");
             code.html('');
             code.html($("#diary").contents().find("body").html());
-            code.show("fast",function(){
+            code.stop(true,true).show("fast",function(){
             document.getElementById('previous').disabled=false;
             if(here >= latest)
                 document.getElementById('next').disabled=true;}).typewriter();
@@ -113,6 +113,7 @@
             iframe.height = "0";
             iframe.width = "0";
             document.getElementById('text').appendChild(iframe);
+            document.getElementById('diary').reload;
             setRandomColor();
         })();  
     </script>        
@@ -252,7 +253,7 @@
 
             function textAnimate(){
                 $("#code").html($("#diary").contents().find("body").html());
-                $("#code").show("fast").typewriter();
+                $("#code").stop(true,true).show("fast").typewriter();
                 $("#nav").show();
             }
 
