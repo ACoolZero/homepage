@@ -251,7 +251,7 @@
                 }
             }));
             
-            var textAnimate {
+            var textAnimate = function () {
                 $("#code").html($("#diary").contents().find("body").html());
                 $("#code").show("fast").typewriter();
                 $("#nav").show();
@@ -264,6 +264,7 @@
                 $await(moveAnimate());
 
                 clockAnimate().start();
+                textAnimate();
 
                 $await(jumpAnimate());
             }));
