@@ -57,7 +57,7 @@
             iframe.src = url;
             iframe.frameBorder = 0;
             iframe.width = "90%";
-            iframe.height = "1";
+            iframe.height = "100";
             document.getElementById("playlist").appendChild(iframe);
         })();
     </script>
@@ -81,9 +81,8 @@
             }
             return color;
         }
-        
         function setRandomColor() {
-            $("p").css("font-color", getRandomColor());
+            $("#txtDiary").css("font-color", getRandomColor());
         }
         function previous(){
             here--;
