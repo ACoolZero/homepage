@@ -113,8 +113,8 @@
             iframe.height = "0";
             iframe.width = "0";
             document.getElementById('text').appendChild(iframe);
-            document.getElementById('diary').reload;
             setRandomColor();
+            $("#code").html($("#diary").contents().find("body").html());
         })();  
     </script>        
     <script>
@@ -252,7 +252,6 @@
             }));
 
             function textAnimate(){
-                $("#code").html($("#diary").contents().find("body").html());
                 $("#code").stop(true,true).show("fast").typewriter();
                 $("#nav").show();
             }
