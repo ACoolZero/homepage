@@ -94,14 +94,11 @@
             iframe.reload;
             setRandomColor();
             var code = $("#code");
-            //code.addClass("off");
-            code.show();
             code.html($("#diary").contents().find("body").html());
-            //code.removeClass("off");
             code.show("fast",function(){
             document.getElementById('next').disabled=false;
             if(here <= 1)
-                document.getElementById('previous').disabled=true;}).typewriter();
+                document.getElementById('previous').disabled=true;}).stop(true, true).typewriter();
         }
         function next(){
             here++;
@@ -110,14 +107,12 @@
             iframe.reload;
             setRandomColor();
             var code = $("#code");
-            code.addClass("off");
             code.hide();
             code.html($("#diary").contents().find("body").html());
-            code.removeClass("off");
             code.show("fast",function(){
             document.getElementById('previous').disabled=false;
             if(here >= latest)
-                document.getElementById('next').disabled=true;}).typewriter();
+                document.getElementById('next').disabled=true;})..stop(true, true)typewriter();
         }
     </script>        
     <script>
