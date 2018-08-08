@@ -82,8 +82,9 @@
         function setRandomColor() {
             var x = document.getElementById("diary");
             var y = (x.contentWindow || x.contentDocument);
-            if (y.document)y = y.document;
-            alert(y);
+            if (y.document)
+                y = y.document;
+            alert(y.innerHTML);
             y.body.style.color = getRandomColor();
             
             //$("#txtDiary").css("font-color", getRandomColor());
