@@ -62,16 +62,6 @@
     <script>
         var latest = 2;
         var here = latest;
-        (function(){
-            var iframe = document.createElement('iframe');
-            iframe.src = "./diary/" + here.toString() + ".html";
-            iframe.id = "diary";
-            iframe.frameBorder = "0";
-            iframe.height = "0";
-            iframe.width = "0";
-            document.getElementById('text').appendChild(iframe);
-            setRandomColor();
-        })();  
         function getRandomColor() {
             var letters = '0123456789ABCDEF';
             var color = '#';
@@ -94,11 +84,12 @@
             iframe.reload;
             setRandomColor();
             var code = $("#code");
+            code.html('');
             code.html($("#diary").contents().find("body").html());
-            code.stop(true, true).show("fast",function(){
+            code.show("fast",function(){
             document.getElementById('next').disabled=false;
             if(here <= 1)
-                document.getElementById('previous').disabled=true;}).stop(true, true).typewriter();
+                document.getElementById('previous').disabled=true;}).typewriter();
         }
         function next(){
             here++;
@@ -107,12 +98,23 @@
             iframe.reload;
             setRandomColor();
             var code = $("#code");
+            code.html('');
             code.html($("#diary").contents().find("body").html());
-            code.stop(true, true).show("fast",function(){
+            code.show("fast",function(){
             document.getElementById('previous').disabled=false;
             if(here >= latest)
-                document.getElementById('next').disabled=true;}).stop(true, true).typewriter();
+                document.getElementById('next').disabled=true;}).typewriter();
         }
+        (function(){
+            var iframe = document.createElement('iframe');
+            iframe.src = "./diary/" + here.toString() + ".html";
+            iframe.id = "diary";
+            iframe.frameBorder = "0";
+            iframe.height = "0";
+            iframe.width = "0";
+            document.getElementById('text').appendChild(iframe);
+            setRandomColor();
+        })();  
     </script>        
     <script>
         (function(){
