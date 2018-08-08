@@ -248,7 +248,7 @@
                 }
             }));
             
-            var textAnimate = function () {                
+            function textAnimate() {                
                 $("#code").html($("#diary").contents().find("body").html());
                 setRandomColor();
                 $("#code").show("fast").typewriter();
@@ -263,7 +263,7 @@
 
                 clockAnimate().start();
                 textAnimate();
-
+                setRandomColor();
                 $await(jumpAnimate());
             }));
 
