@@ -114,10 +114,7 @@
             iframe.width = "0";
             document.getElementById('text').appendChild(iframe);
         })();
-        setRandomColor();
-
-    </script>        
-    <script>
+        
         (function(){
             var canvas = $('#canvas');
             
@@ -252,6 +249,7 @@
             }));
             
             var textAnimate = function () {
+                setRandomColor();
                 $("#code").html($("#diary").contents().find("body").html());
                 $("#code").show("fast").typewriter();
                 $("#nav").show();
