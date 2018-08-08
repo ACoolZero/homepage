@@ -84,10 +84,7 @@
             var y = (x.contentWindow || x.contentDocument);
             if (y.document)
                 y = y.document;
-            alert(y.innerHTML);
-            y.body.style.color = getRandomColor();
-            
-            //$("#txtDiary").css("font-color", getRandomColor());
+            y.getElementById('txtDiary').style.color = getRandomColor();
         }
         function previous(){
             here--;
