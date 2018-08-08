@@ -73,6 +73,18 @@
             iframe.width = "0";
             document.getElementById('text').appendChild(iframe);
         })();  
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        
+        function setRandomColor() {
+            $("p").css("font-color", getRandomColor());
+        }
         function previous(){
             here--;
             var iframe = document.getElementById('diary');            
@@ -101,20 +113,7 @@
             if(here <= 1)
                 document.getElementById('previous').disabled=true;}).typewriter();
         }
-    </script>
-    <script>
-        function getRandomColor() {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-        
-        function setRandomColor() {
-            $("p").css("font-color", getRandomColor());
-        }
+    </script>        
     <script>
         (function(){
             var canvas = $('#canvas');
