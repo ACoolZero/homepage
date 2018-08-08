@@ -248,9 +248,9 @@
                 }
             }));
             
-            var textAnimate = function () {
-                setRandomColor();
+            var textAnimate = function () {                
                 $("#code").html($("#diary").contents().find("body").html());
+                setRandomColor();
                 $("#code").show("fast").typewriter();
                 $("#nav").show();
             }
