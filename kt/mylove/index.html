@@ -113,9 +113,11 @@
             iframe.height = "0";
             iframe.width = "0";
             document.getElementById('text').appendChild(iframe);
-        })();  
-        next();
-        here--;
+            setRandomColor();
+            $("#code").html($("#diary").contents().find("body").html());
+            $("#code").stop(true,true).show("fast").typewriter();
+            $("#nav").show();
+        })();
     </script>        
     <script>
         (function(){
@@ -251,11 +253,6 @@
                 }
             }));
 
-            function textAnimate(){
-                $("#code").stop(true,true).show("fast").typewriter();
-                $("#nav").show();
-            }
-
             var runAsync = eval(Jscex.compile("async", function () {
                 $await(seedAnimate());
                 $await(growAnimate());
@@ -263,7 +260,6 @@
                 $await(moveAnimate());
 
                 clockAnimate().start();
-                textAnimate();
 
                 $await(jumpAnimate());
             }));
