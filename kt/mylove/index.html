@@ -94,6 +94,7 @@
             iframe.reload;
             setRandomColor();
             var code = $("#code");
+            code.hide();
             code.html($("#diary").contents().find("body").html());
             code.show("fast",function(){
             document.getElementById('next').disabled=false;
