@@ -89,7 +89,7 @@
             code.typewriter(true).show("fast",function(){
             document.getElementById('next').disabled=false;
             if(here <= 1)
-                document.getElementById('previous').disabled=true;}).typewriter();
+                document.getElementById('previous').disabled=true;}).typewriter(false);
         }
         function next() {
             here++;
@@ -100,10 +100,10 @@
             var code = $("#code");
             code.stop(true, false);
             code.html($("#diary").contents().find("body").html());
-            code.show("fast",function(){
-            document.typewriter(true).getElementById('previous').disabled=false;
+            code.typewriter(true).show("fast",function(){
+            document.getElementById('previous').disabled=false;
             if(here >= latest)
-                document.getElementById('next').disabled=true;}).typewriter();
+                document.getElementById('next').disabled=true;}).typewriter(false);
         }
         (function(){
             var iframe = document.createElement('iframe');
@@ -251,7 +251,7 @@
             function textAnimate() {                
                 setRandomColor();                
                 $("#code").html($("#diary").contents().find("body").html());
-                $("#code").show("fast").typewriter();
+                $("#code").show("fast").typewriter(false);
                 $("#nav").show();
             }
 
