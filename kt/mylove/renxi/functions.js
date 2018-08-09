@@ -17,6 +17,9 @@ $(window).resize(function() {
 			var $ele = $(this), str = $ele.html(), progress = 0;
 			$ele.html('');
 			var timer = setInterval(function() {
+				if (stoped) {
+					clearInterval(timer);
+				}
 				var current = str.substr(progress, 1);
 				if (current == '<') {
 					progress = str.indexOf('>', progress) + 1;
@@ -25,9 +28,6 @@ $(window).resize(function() {
 				}
 				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
 				if (progress >= str.length-1) {
-					clearInterval(timer);
-				}
-				if (stoped) {
 					clearInterval(timer);
 				}
 			}, 75);
