@@ -100,7 +100,7 @@
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
-            code.slideDown("5000");
+            code.typewriter();
             document.getElementById('next').disabled=false;
             if(here <= 1)
                 document.getElementById('previous').disabled=true;
@@ -113,7 +113,7 @@
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
-            code.slideDown("5000");
+            code.typewriter();
             document.getElementById('previous').disabled=false;
             if(here >= latest)
                 document.getElementById('next').disabled=true;
@@ -254,7 +254,7 @@
             function textAnimate() {                
                 setRandomColor();                
                 $("#code").html($("#diary").contents().find("body").html());
-                $("#code").slideDown("1000");
+                $("#code").typewriter();
                 $("#nav").show();
             }
             var runAsync = eval(Jscex.compile("async", function () {
@@ -262,10 +262,10 @@
                 $await(growAnimate());
                 $await(flowAnimate());
                 $await(moveAnimate());
-                //clockAnimate().start();
+                clockAnimate().start();
                 textAnimate();
                 
-                $await(jumpAnimate());
+                //$await(jumpAnimate());
             }));
             runAsync().start();
         })();
