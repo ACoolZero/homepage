@@ -66,10 +66,12 @@
         function showyt() {
             $('#ytplaylist').attr("height", "600px");
             $('#showyt').attr("onclick","hideyt();");
+            $('#ytplaylist').style("padding","5%");
         }
         function hideyt() {
             $('#ytplaylist').attr("height", "1px");
             $('#showyt').attr("onclick","showyt();");
+            $('#ytplaylist').style("padding","");
         }
     </script>
     <script>
