@@ -26,10 +26,10 @@
         <div id="error">
             Trình duyệt của bạn không được hỗ trợ. Bạn nên sử dụng (<a href="http://www.google.com/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)
         </div>
-        <div id="topbar" style="display: none; z-index: 500; position: sticky; top: 0px; padding-left:5%; padding-right:5%">
+        <div  style="z-index: 500; position: sticky; top: 0px; padding-left:5%; padding-right:5%">
             <div id="playlist"></div>
-            <img height="32px" id="showyt" onclick="showyt();" style="float: right;" src="https://vignette.wikia.nocookie.net/logopedia/images/9/97/Youtube_kids_app_icon.png/revision/latest/scale-to-width-down/480?cb=20150305173154"/>
-            <font id="txtVideo" class="STYLE1" style="float: right; padding-right: 5px;">Xem video thì ấn vào </font>
+            <img height="32px" id="showyt" onclick="showyt();" style="display: none; float: right;" src="https://vignette.wikia.nocookie.net/logopedia/images/9/97/Youtube_kids_app_icon.png/revision/latest/scale-to-width-down/480?cb=20150305173154"/>
+            <font id="txtVideo" class="STYLE1" style="display: none; float: right; padding-right: 5px;">Xem video thì ấn vào </font>
         </div>
         <div style="padding:10px;"></div>
         <div id="wrap">
@@ -74,7 +74,10 @@
             $('#ytplaylist').css("padding-top","0");
             $('#txtVideo').text("Xem video thì ấn vào ");
         }        
-        //$('#topbar').delay(1000).show();
+        setTimeout(function(){
+            $('#txtVideo').show();
+            $('#showyt').show();
+        }, 5000);
     </script>
     <script>
         var latest = 2;
