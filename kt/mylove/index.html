@@ -26,12 +26,15 @@
         <div id="error">
             Trình duyệt của bạn không được hỗ trợ. Bạn nên sử dụng (<a href="http://www.google.com/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)
         </div>
-        <div id="playlist" style="float: center;">
+        <center>
+            <div id="playlist">
+            </div>
+        </center>
         <div id="wrap">
             <div id="text">
                 <div id="nav">
                     <button id="previous" onclick="previous();" style="display: inline-block; float: left;">Trước</button>
-                    <button id="showyt" style="float: center; display: inline-block;" onclick="showyt();">Xem video</button>
+                    <!--<center><button id="showyt" onclick="showyt();">Xem video</button><button id="hideyt" style="display:none;" onclick="hideyt();">Ẩn video</button></center>-->
                     <button id="next" onclick="next();" style="display: inline-block; float: right;" disabled !important >Sau</button>
                 </div><br>
                 <div id="code">
@@ -59,13 +62,13 @@
         })();
         function showyt() {
             $('#ytplaylist').attr("height", "600px");
-            $('#showyt').attr("onclick", "hideyt();");
-            $('#showyt').text("Ẩn video");
+            $('#showyt').hide();
+            $('#hideyt').show();
         }
         function hideyt() {
             $('#ytplaylist').attr("height", "1px");
-            $('#showyt').attr("onclick", "showyt();");
-            $('#showyt').text("Xem video"):
+            $('#hideyt').hide();
+            $('#showyt').show();
         }
     </script>
     <script>
@@ -130,7 +133,6 @@
             if (!canvas[0].getContext) {
                 $("#error").show();
                 return false;        }
-
             var width = canvas.width();
             var height = canvas.height();        
             canvas.attr("width", width);
@@ -170,12 +172,10 @@
                     speed: 10,
                 }
             }
-
             var tree = new Tree(canvas[0], width, height, opts);
             var seed = tree.seed;
             var foot = tree.footer;
             var hold = 1;
-
             canvas.click(function(e) {
                 var offset = canvas.offset(), x, y;
                 x = e.pageX - offset.left;
@@ -192,7 +192,6 @@
                 y = e.pageY - offset.top;
                 canvas.toggleClass('hand', seed.hover(x, y));
             });
-
             var seedAnimate = eval(Jscex.compile("async", function () {
                 seed.draw();
                 while (hold) {
@@ -208,21 +207,18 @@
                     $await(Jscex.Async.sleep(10));
                 }
             }));
-
             var growAnimate = eval(Jscex.compile("async", function () {
                 do {
                     tree.grow();
                     $await(Jscex.Async.sleep(10));
                 } while (tree.canGrow());
             }));
-
             var flowAnimate = eval(Jscex.compile("async", function () {
                 do {
                     tree.flower(2);
                     $await(Jscex.Async.sleep(10));
                 } while (tree.canFlower());
             }));
-
             var moveAnimate = eval(Jscex.compile("async", function () {
                 tree.snapshot("p1", 240, 0, 610, 680);
                 while (tree.move("p1", 500, 0)) {
@@ -231,13 +227,11 @@
                 }
                 foot.draw();
                 tree.snapshot("p2", 500, 0, 610, 680);
-
                 canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
                 canvas.css("background", "#ffe");
                 $await(Jscex.Async.sleep(300));
                 canvas.css("background", "none");
             }));
-
             var jumpAnimate = eval(Jscex.compile("async", function () {
                 var ctx = tree.ctx;
                 while (true) {
@@ -247,7 +241,6 @@
                     $await(Jscex.Async.sleep(25));
                 }
             }));
-
             var clockAnimate = eval(Jscex.compile("async", function () { 
                 var together = new Date("Mar 22, 2015 0:0:1").getTime();    
                 $("#clock-box").fadeIn(500);
@@ -263,19 +256,16 @@
                 $("#code").show("fast").typewriter(false);
                 $("#nav").show();
             }
-
             var runAsync = eval(Jscex.compile("async", function () {
                 $await(seedAnimate());
                 $await(growAnimate());
                 $await(flowAnimate());
                 $await(moveAnimate());
-
                 clockAnimate().start();
                 textAnimate();
                 
                 $await(jumpAnimate());
             }));
-
             runAsync().start();
         })();
     </script>
