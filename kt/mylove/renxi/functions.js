@@ -14,11 +14,11 @@ $(window).resize(function() {
 (function($) {
 	$.fn.typewriter = function(stoped = false) {
 		var thisTimer = this.each(function() {
+			if (stoped)
+				$(this).stop(true,true);
 			var $ele = $(this), str = $ele.html(), progress = 0;
 			$ele.html('');
 			var timer = setInterval(function() {
-				if (stoped)
-					$(this).stop(true,true);
 				var current = str.substr(progress, 1);
 				if (current == '<') {
 					progress = str.indexOf('>', progress) + 1;
