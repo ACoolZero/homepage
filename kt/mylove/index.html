@@ -99,7 +99,6 @@
             iframe.reload;
             setRandomColor();
             var code = $("#code");
-            code.stop(true,false);
             code.html($("#diary").contents().find("body").html());
             code.show("1000",function(){
             document.getElementById('next').disabled=false;
@@ -113,7 +112,6 @@
             iframe.reload;
             setRandomColor();
             var code = $("#code");
-            code.stop(true, false);
             code.html($("#diary").contents().find("body").html());
             code.show("1000",function(){
             document.getElementById('previous').disabled=false;
