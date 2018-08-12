@@ -29,7 +29,7 @@
         <div style="z-index: 500; position: sticky; top: 0px; padding-left:5%; padding-right:5%">
             <div id="playlist"></div>
             <img height="32px" id="showyt" onclick="showyt();" style="float: right;" src="https://vignette.wikia.nocookie.net/logopedia/images/9/97/Youtube_kids_app_icon.png/revision/latest/scale-to-width-down/480?cb=20150305173154"/>
-            <font id="txtVideo" color="#666666" style="float: right; padding-right: 5px;">Xem video thì ấn vào </font>
+            <font id="txtVideo" class="STYLE1" style="float: right; padding-right: 5px;">Xem video thì ấn vào </font>
         </div>
         <div style="padding:10px;"></div>
         <div id="wrap">
@@ -101,7 +101,7 @@
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
-            code.show().typewriter();
+            code.show().typewriter(true);
             document.getElementById('next').disabled=false;
             if(here <= 1)
                 document.getElementById('previous').disabled=true;
@@ -114,7 +114,7 @@
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
-            code.show().typewriter();
+            code.show().typewriter(true);
             document.getElementById('previous').disabled=false;
             if(here >= latest)
                 document.getElementById('next').disabled=true;
