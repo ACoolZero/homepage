@@ -100,7 +100,7 @@
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
-            code.typewriter();
+            code.show().typewriter();
             document.getElementById('next').disabled=false;
             if(here <= 1)
                 document.getElementById('previous').disabled=true;
@@ -113,7 +113,7 @@
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
-            code.typewriter();
+            code.show().typewriter();
             document.getElementById('previous').disabled=false;
             if(here >= latest)
                 document.getElementById('next').disabled=true;
@@ -254,7 +254,7 @@
             function textAnimate() {                
                 setRandomColor();                
                 $("#code").html($("#diary").contents().find("body").html());
-                $("#code").typewriter();
+                $("#code").show().typewriter();
                 $("#nav").show();
             }
             var runAsync = eval(Jscex.compile("async", function () {
