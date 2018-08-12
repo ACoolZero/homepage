@@ -34,7 +34,7 @@
             <div id="text">
                 <div id="nav">
                     <button id="previous" onclick="previous();" style="float: left;">Trước</button>
-                    <center><button id="showyt" onclick="showyt();">Xem video</button>
+                    <center><button id="showyt" onclick="showyt();">Xem video</button><button id="hideyt" style="display:none;" onclick="hideyt();">Ẩn video</button></center>
                     <button id="next" onclick="next();" style="float: right;" disabled !important >Sau</button>
                 </div><br>
                 <div id="code">
@@ -61,10 +61,15 @@
             document.getElementById("playlist").appendChild(iframe);
         })();
         function showyt() {
-            $('#ytplaylist').attr("height", "300px");
+            $('#ytplaylist').attr("height", "600px");
             $('#showyt').hide();
+            $('#hideyt').show();
         }
-
+        function hideyt() {
+            $('#ytplaylist').attr("height", "1px");
+            $('#hideyt').hide();
+            $('#showyt').show();
+        }
     </script>
     <script>
         var latest = 2;
