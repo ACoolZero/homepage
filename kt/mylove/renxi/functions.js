@@ -12,7 +12,7 @@ $(window).resize(function() {
 });
 
 (function($) {
-	$.fn.typewriter = function(stoped = false) {
+	$.fn.typeSSwriter = function(stoped = false) {
 		var thisTimer = setInterval(function() {
 			if (stoped) {
 				clearInterval(thisTimer);
