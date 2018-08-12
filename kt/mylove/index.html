@@ -17,9 +17,6 @@
     <style type="text/css">
         .STYLE1 {color: #666666}
     </style>
-    <style>
-        
-    </style>
     <meta http-equiv=”Pragma” content=”no-cache”>
     <meta http-equiv=”Expires” content=”-1″>
     <meta http-equiv=”CACHE-CONTROL” content=”NO-CACHE”>
@@ -39,7 +36,7 @@
             <div id="text">
                 <div id="nav">
                     <button id="previous" onclick="previous();" style="display: inline-block; float: left;">Trước</button>
-                    <button id="next" onclick="next();" style="display: inline-block; float: right;" disabled !important >Sau</button>
+                    <button id="next" onclick="next();" style="display: inline-block; float: right;">Sau</button>
                 </div><br>
                 <div id="code" class="css-typing">
                     <p>This is placeholder</p>
@@ -104,7 +101,7 @@
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
-            code.show().typewriter();
+            code.show().typewriter(true);
             document.getElementById('next').disabled=false;
             if(here <= 1)
                 document.getElementById('previous').disabled=true;
@@ -117,7 +114,7 @@
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
-            code.show().typewriter();
+            code.show().typewriter(true);
             document.getElementById('previous').disabled=false;
             if(here >= latest)
                 document.getElementById('next').disabled=true;
@@ -259,6 +256,7 @@
                 setRandomColor();                
                 $("#code").html($("#diary").contents().find("body").html());
                 $("#code").show().typewriter();
+                $('#next").attr("disabled", "true");
                 $("#nav").show();
             }
             var runAsync = eval(Jscex.compile("async", function () {
