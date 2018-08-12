@@ -26,7 +26,7 @@
         <div id="error">
             Trình duyệt của bạn không được hỗ trợ. Bạn nên sử dụng (<a href="http://www.google.com/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)
         </div>
-        <div style="z-index: 100; position: sticky; top: 0px; padding-left:5%; padding-right:5%">
+        <div style="z-index: 500; position: sticky; top: 0px; padding-left:5%; padding-right:5%">
             <center>
                 <div id="playlist">
                 </div>
@@ -66,7 +66,7 @@
         function showyt() {
             $('#ytplaylist').attr("height", "600px");
             $('#showyt').attr("onclick","hideyt();");
-            $('#ytplaylist').css("padding-top","30px");
+            $('#ytplaylist').css("padding-top","2\0px");
             $('#txtVideo').text("Ẩn video thì ấn vào ");
             
         }
@@ -104,10 +104,10 @@
             var code = $("#code");
             code.stop(true,false);
             code.html($("#diary").contents().find("body").html());
-            code.typewriter(true).show("fast",function(){
+            code.show("1000",function(){
             document.getElementById('next').disabled=false;
             if(here <= 1)
-                document.getElementById('previous').disabled=true;}).typewriter(false);
+                document.getElementById('previous').disabled=true;});
         }
         function next() {
             here++;
@@ -118,10 +118,10 @@
             var code = $("#code");
             code.stop(true, false);
             code.html($("#diary").contents().find("body").html());
-            code.typewriter(true).show("fast",function(){
+            code.show("1000",function(){
             document.getElementById('previous').disabled=false;
             if(here >= latest)
-                document.getElementById('next').disabled=true;}).typewriter(false);
+                document.getElementById('next').disabled=true;});
         }
         (function(){
             var iframe = document.createElement('iframe');
@@ -259,7 +259,7 @@
             function textAnimate() {                
                 setRandomColor();                
                 $("#code").html($("#diary").contents().find("body").html());
-                $("#code").show("fast").typewriter(false);
+                $("#code").show("1000");
                 $("#nav").show();
             }
             var runAsync = eval(Jscex.compile("async", function () {
