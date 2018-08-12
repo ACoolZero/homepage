@@ -34,7 +34,7 @@
             <div id="text">
                 <div id="nav">
                     <button id="previous" onclick="previous();" style="display: inline-block; float: left;">Trước</button>
-                    <center><button id="showyt" onclick="showyt();" style="display: inline-block;">Xem video</button></center>
+                    <center><button id="showyt" onclick="showyt();" style="display: inline-block;"><img height="32px" src="https://vignette.wikia.nocookie.net/logopedia/images/9/97/Youtube_kids_app_icon.png/revision/latest/scale-to-width-down/480?cb=20150305173154"/></button></center>
                     <button id="next" onclick="next();" style="display: inline-block; float: right;" disabled !important >Sau</button>
                 </div><br>
                 <div id="code">
@@ -62,13 +62,11 @@
         })();
         function showyt() {
             $('#ytplaylist').attr("height", "600px");
-            $('#showyt').hide();
-            $('#hideyt').show();
+            $('#showyt').attr("onclick","hideyt();");
         }
         function hideyt() {
             $('#ytplaylist').attr("height", "1px");
-            $('#hideyt').hide();
-            $('#showyt').show();
+            $('#showyt').attr("onclick","showyt();");
         }
     </script>
     <script>
