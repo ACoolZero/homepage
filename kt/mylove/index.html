@@ -34,9 +34,8 @@
             <div id="text">
                 <div id="nav">
                     <button id="previous" onclick="previous();" style="display: inline-block; float: left;">Trước</button>
-                    <center style="display: inline-block;">
-                        <button id="showyt" onclick="showyt();">Xem video</button>
-                        <button id="hideyt" style="display:none;" onclick="hideyt();">Ẩn video</button>
+                    <center>
+                        <button id="showyt" style="display: inline-block;"onclick="showyt();">Xem video</button>
                     </center>
                     <button id="next" onclick="next();" style="display: inline-block; float: right;" disabled !important >Sau</button>
                 </div><br>
@@ -65,13 +64,13 @@
         })();
         function showyt() {
             $('#ytplaylist').attr("height", "600px");
-            $('#showyt').hide();
-            $('#hideyt').show();
+            $('#showyt').attr("onclick", "hideyt();");
+            $('#showyt').text("Ẩn video");
         }
         function hideyt() {
             $('#ytplaylist').attr("height", "1px");
-            $('#hideyt').hide();
-            $('#showyt').show();
+            $('#showyt').attr("onclick", "showyt();");
+            $('#showyt').text("Xem video"):
         }
     </script>
     <script>
