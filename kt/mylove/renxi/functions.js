@@ -12,8 +12,11 @@ $(window).resize(function() {
 });
 
 (function($) {
-	$.fn.typewriter = function() {
-		this.each(function() {
+	$.fn.typewriter = function(stoped = false) {
+		var thisTimer = this.each(setInterval(function() {
+			if (stoped) {
+				clearInterval(thisTimer);
+			}
 			var $ele = $(this), str = $ele.html(), progress = 0;
 			$ele.html('');
 			var timer = setInterval(function() {
@@ -28,7 +31,7 @@ $(window).resize(function() {
 					clearInterval(timer);
 				}
 			}, 75);
-		});
+		}, 75));
 		return this;
 	};
 })(jQuery);
