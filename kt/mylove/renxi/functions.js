@@ -12,14 +12,11 @@ $(window).resize(function() {
 });
 
 (function($) {
-	$.fn.typewriter = function(stopped) {
+	$.fn.typewriter = function() {
 		this.each(function() {
 			var $ele = $(this), str = $ele.html(), progress = 0;
 			$ele.html('');
 			var timer = setInterval(function() {
-				if (stoped) {
-					clearInterval(timer);
-				}
 				var current = str.substr(progress, 1);
 				if (current == '<') {
 					progress = str.indexOf('>', progress) + 1;
