@@ -238,7 +238,7 @@
                 while (true) {
                     tree.ctx.clearRect(0, 0, width, height);
                     tree.jump();
-                    foot.draw();
+                    //foot.draw();
                     $await(Jscex.Async.sleep(25));
                 }
             }));
@@ -265,7 +265,7 @@
                 clockAnimate().start();
                 textAnimate();
                 
-                //$await(jumpAnimate());
+                $await(jumpAnimate());
             }));
             runAsync().start();
         })();
