@@ -34,6 +34,7 @@
             <div id="text">
                 <div id="nav">
                     <button id="previous" onclick="previous();" style="float: left;">Trước</button>
+                    <center><button id="showyt" onclick="showyt();">Xem video</button>
                     <button id="next" onclick="next();" style="float: right;" disabled !important >Sau</button>
                 </div><br>
                 <div id="code">
@@ -49,15 +50,20 @@
         </div>
     </div>
     <script>
-        (function(){
+        (function() {
             var iframe = document.createElement('iframe');
             var url = "https://www.youtube.com/embed/?listType=playlist&list=PLsBwWQkOtT2LdZWoMmK3ygK_zp_EPEsyh&autoplay=1&loop=1&index="+Math.floor((Math.random() * 38) + 0);
+            iframe.id = "ytplaylist";
             iframe.src = url;
             iframe.frameBorder = 0;
             iframe.width = "90%";
-            iframe.height = "10%";
+            iframe.height = "2px";
             document.getElementById("playlist").appendChild(iframe);
         })();
+        function showyt() {
+            $('#ytplaylist').height= "100px";
+        }
+
     </script>
     <script>
         var latest = 2;
