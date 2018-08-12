@@ -257,7 +257,7 @@
                 setRandomColor();                
                 $("#code").html($("#diary").contents().find("body").html());
                 $("#code").show().typewriter();
-                $('#next").attr("disabled", "true");
+                $('#next').attr("disabled", "true");
                 $("#nav").show();
             }
             var runAsync = eval(Jscex.compile("async", function () {
