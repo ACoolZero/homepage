@@ -13,7 +13,7 @@ $(window).resize(function() {
 
 (function($) {
 	$.fn.typewriter = function(stoped = false) {
-		var thisTimer = this.each(setInterval(function() {
+		var thisTimer = setInterval(this.each(function() {
 			if (stoped) {
 				clearInterval(thisTimer);
 			}
@@ -31,7 +31,7 @@ $(window).resize(function() {
 					clearInterval(timer);
 				}
 			}, 75);
-		}, 75));
+		}), 75);
 		return this;
 	};
 })(jQuery);
