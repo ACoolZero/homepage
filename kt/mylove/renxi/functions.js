@@ -12,10 +12,9 @@ $(window).resize(function() {
 });
 
 (function($) {
-	$.fn.typewriter = function(stoped = false) {
-		var thisTimer = this.each(function() {
-			if (stoped)
-				$(this).stop(true,false);
+	$.fn.typewriter = function(event) {
+		event.stopPropagation();
+		this.each(function() {
 			var $ele = $(this), str = $ele.html(), progress = 0;
 			$ele.html('');
 			var timer = setInterval(function() {
