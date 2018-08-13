@@ -62,7 +62,7 @@
             document.getElementById("playlist").appendChild(iframe);
         })();
         function showyt() {
-            $('#ytplaylist').attr("height", "600px");
+            $('#ytplaylist').attr("height", "580px");
             $('#showyt').attr("onclick","hideyt();");
             $('#ytplaylist').css("padding-top","30px");
             $('#txtVideo').text("Ẩn video thì ấn vào ");
@@ -73,6 +73,7 @@
             $('#showyt').attr("onclick","showyt();");
             $('#ytplaylist').css("padding-top","0");
             $('#txtVideo').text("Xem video thì ấn vào ");
+            window.scrollTo(0, document.body.scrollHeight);
         }        
         setTimeout(function(){
             $('#txtVideo').show();
