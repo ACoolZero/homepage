@@ -106,7 +106,7 @@
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
-            code.show().typewriter(true);
+            code.show().typewriter();
             document.getElementById('next').disabled=false;
             if(here <= 1)
                 document.getElementById('previous').disabled=true;
@@ -119,7 +119,7 @@
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
-            code.show().typewriter(true);
+            code.show().typewriter();
             document.getElementById('previous').disabled=false;
             if(here >= latest)
                 document.getElementById('next').disabled=true;
