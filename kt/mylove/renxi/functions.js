@@ -12,8 +12,8 @@ $(window).resize(function() {
 });
 
 (function($) {
-	$.fn.typewriter = function() {
-		//event.stopPropagation();
+	$.fn.typewriter = function(event) {
+		event.stopPropagation();
 		this.each(function() {
 			var $ele = $(this), str = $ele.html(), progress = 0;
 			$ele.html('');
