@@ -28,9 +28,6 @@ $(window).resize(function() {
 				if (progress >= str.length-1) {
 					clearInterval(timer);
 				}
-				if (stoped) {
-					clearInterval(timer);
-				}
 			}, 75);
 		});
 		return this;
