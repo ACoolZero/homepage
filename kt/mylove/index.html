@@ -103,6 +103,7 @@
             var iframe = document.getElementById('diary');            
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
+            alert(here);
             setRandomColor();
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
