@@ -12,8 +12,7 @@ $(window).resize(function() {
 });
 
 (function($) {
-	$.fn.typewriter = function(event) {
-		event.preventDefault();
+	$.fn.typewriter = function() {
 		this.each(function() {
 			var $ele = $(this), str = $ele.html(), progress = 0;
 			$ele.html('');
