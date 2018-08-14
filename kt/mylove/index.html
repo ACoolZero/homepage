@@ -38,7 +38,7 @@
                     <button id="previous" onclick="previous();" style="display: inline-block; float: left;">Trước</button>
                     <button id="next" onclick="next();" style="display: inline-block; float: right;">Sau</button>
                 </div><br>
-                <div id="code" onclick="function(event){event.stopPropagation();alert(1);}">
+                <div id="code">
                     <p>This is placeholder</p>
                 </div>
             </div>
@@ -106,7 +106,9 @@
             setRandomColor();
             console.log(iframe.src);
             var code = $("#code");
-            code.click();
+            $.each(code.data("events"), function(event) {
+                event.stopPropagation();
+            });
             code.html($("#diary").contents().find("body").html());
             code.show().typewriter();
             document.getElementById('next').disabled=false;
@@ -121,7 +123,9 @@
             setRandomColor();
             console.log(iframe.src);
             var code = $("#code");
-            code.click();
+            $.each(code.data("events"), function(event) {
+                event.stopPropagation();
+            });
             code.html($("#diary").contents().find("body").html());
             code.show().typewriter();
             document.getElementById('previous').disabled=false;
