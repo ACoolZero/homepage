@@ -38,10 +38,10 @@
                     <button id="previous" onclick="previous();" style="display: inline-block; float: left;">Trước</button>
                     <button id="next" onclick="next();" style="display: inline-block; float: right;">Sau</button>
                 </div><br>
-                <div id="code" class="css-typing">
+                <div id="code" onclick="function(){event.stopPropagation();}">
                     <p>This is placeholder</p>
                 </div>
-            </div>
+            </d
             <div id="clock-box">
                 <span class="STYLE1"></span><font color="#FF0000">* Anh Yêu Em *</font>
                 <span class="STYLE1"> Khoảng thời gian bên nhau...</span>
@@ -106,6 +106,7 @@
             setRandomColor();
             console.log(iframe.src);
             var code = $("#code");
+            code.click();
             code.html($("#diary").contents().find("body").html());
             code.show().typewriter();
             document.getElementById('next').disabled=false;
@@ -120,6 +121,7 @@
             setRandomColor();
             console.log(iframe.src);
             var code = $("#code");
+            code.click();
             code.html($("#diary").contents().find("body").html());
             code.show().typewriter();
             document.getElementById('previous').disabled=false;
