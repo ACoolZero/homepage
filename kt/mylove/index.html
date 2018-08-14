@@ -106,7 +106,8 @@
             setRandomColor();
             console.log(iframe.src);
             var code = $("#code");
-            $.each(code.data("events"), function(event) {
+            $.each(code.data("events"), function(i, event) {
+                alert(i);
                 event.stopPropagation();
             });
             code.html($("#diary").contents().find("body").html());
@@ -123,7 +124,8 @@
             setRandomColor();
             console.log(iframe.src);
             var code = $("#code");
-            $.each(code.data("events"), function(event) {
+            $.each(code.data("events"), function(i, event) {
+                alert(i);
                 event.stopPropagation();
             });
             code.html($("#diary").contents().find("body").html());
