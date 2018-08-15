@@ -99,6 +99,7 @@
             y.getElementById('txtDiary').style.color = getRandomColor();
         }
         function previous() {
+            code.trigger('click');
             here--;
             var iframe = document.getElementById('diary');            
             iframe.src = "./diary/" + here.toString() + ".html";
@@ -107,7 +108,6 @@
                 setRandomColor();
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
-                code.trigger('click');
                 code.show().typewriter();
             }, 1000);
             document.getElementById('next').disabled=false;
@@ -115,6 +115,7 @@
                 document.getElementById('previous').disabled=true;
         }
         function next() {
+            code.trigger('click');
             here++;
             var iframe = document.getElementById('diary');
             iframe.src = "./diary/" + here.toString() + ".html";
@@ -124,7 +125,6 @@
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
                 code.html($("#diary").contents().find("body").html());
-                code.trigger('click');
                 code.show().typewriter();
             }, 1000);
             document.getElementById('previous').disabled=false;
