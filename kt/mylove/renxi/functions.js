@@ -21,7 +21,7 @@ var stoped = false;
 			var timer = setInterval(function() {
 				if (stoped) {
 					console.log('stoped');
-					return this;
+					clearInterval(timer);
 				}
 				var current = str.substr(progress, 1);
 				if (current == '<') {
