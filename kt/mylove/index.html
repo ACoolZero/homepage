@@ -107,6 +107,7 @@
                 setRandomColor();
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
+                code.off();
                 code.show().typewriter();
             }, 1000);
             document.getElementById('next').disabled=false;
@@ -122,6 +123,7 @@
                 setRandomColor();
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
+                code.off();
                 code.show().typewriter();
             }, 1000);
             document.getElementById('previous').disabled=false;
