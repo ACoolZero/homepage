@@ -29,7 +29,6 @@ $(window).resize(function() {
 					clearInterval(timer);
 				}
 			}, 50);
-			console.log($ele.html());
 		});
 		return this;
 	};
