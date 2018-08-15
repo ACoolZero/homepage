@@ -262,9 +262,9 @@
             function textAnimate() {                
                 setRandomColor();                
                 $("#code").html($("#diary").contents().find("body").html());
-                $("#code").show().typewriter();
                 $('#next').attr("disabled", "true");
                 $("#nav").show();
+                $("#code").show().typewriter();
             }
             var runAsync = eval(Jscex.compile("async", function () {
                 $await(seedAnimate());
