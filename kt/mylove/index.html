@@ -103,12 +103,12 @@
             var iframe = document.getElementById('diary');            
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
-            if (iframe.readyState = "complete") {
+            setTimeout(function(){
                 setRandomColor();
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
                 code.show().typewriter();
-            }
+            }, 1000);
             document.getElementById('next').disabled=false;
             if(here <= 1)
                 document.getElementById('previous').disabled=true;
@@ -118,12 +118,12 @@
             var iframe = document.getElementById('diary');
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
-            if (iframe.readyState = "complete") {
+            setTimeout(function(){
                 setRandomColor();
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
                 code.show().typewriter();
-            }
+            }, 1000);
             document.getElementById('previous').disabled=false;
             if(here >= latest)
                 document.getElementById('next').disabled=true;
