@@ -104,9 +104,9 @@
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
             setRandomColor();
-            console.log(iframe);
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
+            console.log(code.html());
             code.show().typewriter();
             document.getElementById('next').disabled=false;
             if(here <= 1)
@@ -118,9 +118,9 @@
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
             setRandomColor();
-            console.log(iframe);
             var code = $("#code");
             code.html($("#diary").contents().find("body").html());
+            console.log(code.html());
             code.show().typewriter();
             document.getElementById('previous').disabled=false;
             if(here >= latest)
