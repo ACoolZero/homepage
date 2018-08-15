@@ -104,9 +104,9 @@
             var iframe = document.getElementById('diary');            
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
+            stoped = true;
             setTimeout(function(){
-                setRandomColor();                
-                stoped = true;
+                setRandomColor();
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
                 code.show().typewriter();
@@ -120,9 +120,9 @@
             var iframe = document.getElementById('diary');
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
+            stoped = true;
             setTimeout(function(){
                 setRandomColor();
-                stoped = true;
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
                 code.show().typewriter();
