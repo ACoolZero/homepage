@@ -16,6 +16,7 @@ var stoped = false;
 	$.fn.typewriter = function() {
 		stoped = false;
 		this.each(function() {
+			console.log('1?');
 			var $ele = $(this), str = $ele.html(), progress = 0;
 			$ele.html('');
 			var timer = setInterval(function() {
