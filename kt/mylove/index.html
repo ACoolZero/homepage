@@ -38,7 +38,7 @@
                     <button id="previous" onclick="previous();" style="display: inline-block; float: left;">Trước</button>
                     <button id="next" onclick="next();" style="display: inline-block; float: right;">Sau</button>
                 </div><br>
-                <div id="code" onclick="$(this).off();">
+                <div id="code">
                     <p>This is placeholder</p>
                 </div>
             </div>
@@ -104,8 +104,8 @@
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
             setTimeout(function(){
-                $('#next').off();
-                setRandomColor();
+                setRandomColor();                
+                stoped = true;
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
                 code.show().typewriter();
@@ -120,10 +120,9 @@
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
             setTimeout(function(){
-                $('#previous').off();
                 setRandomColor();
+                stoped = true;
                 var code = $("#code");
-                code.html($("#diary").contents().find("body").html());
                 code.html($("#diary").contents().find("body").html());
                 code.show().typewriter();
             }, 1000);
