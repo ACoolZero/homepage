@@ -105,7 +105,8 @@
             iframe.reload;
             //setRandomColor();
             var code = $("#code");
-            code.html(iframe.contents().find("body").html());
+            code.html($("#diary").contents().find("body").html());
+            console.log($("#diary").contents().find("body").html());
             console.log(code.html());
             code.show().typewriter();
             document.getElementById('next').disabled=false;
@@ -119,7 +120,8 @@
             iframe.reload;
             //setRandomColor();
             var code = $("#code");
-            code.html(iframe.contents().find("body").html());
+            code.html($("#diary").contents().find("body").html());
+            console.log($("#diary").contents().find("body").html());
             console.log(code.html());
             code.show().typewriter();
             document.getElementById('previous').disabled=false;
