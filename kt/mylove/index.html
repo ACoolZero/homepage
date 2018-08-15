@@ -104,11 +104,11 @@
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
             setTimeout(function(){
+                $('#next').off();
                 setRandomColor();
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
                 code.show().typewriter();
-                code.trigger('click');
             }, 1000);
             document.getElementById('next').disabled=false;
             if(here <= 1)
@@ -120,12 +120,12 @@
             iframe.src = "./diary/" + here.toString() + ".html";
             iframe.reload;
             setTimeout(function(){
+                $('#previous').off();
                 setRandomColor();
                 var code = $("#code");
                 code.html($("#diary").contents().find("body").html());
                 code.html($("#diary").contents().find("body").html());
                 code.show().typewriter();
-                code.trigger('click');
             }, 1000);
             document.getElementById('previous').disabled=false;
             if(here >= latest)
