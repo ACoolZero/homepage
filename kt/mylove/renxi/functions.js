@@ -18,8 +18,10 @@ var stoped = false;
 			var $ele = $(this), str = $ele.html(), progress = 0;
 			$ele.html('');
 			var timer = setInterval(function() {
-				if (stop)
+				if (stoped) {
+					console.log('stoped');
 					return this;
+				}
 				var current = str.substr(progress, 1);
 				if (current == '<') {
 					progress = str.indexOf('>', progress) + 1;
