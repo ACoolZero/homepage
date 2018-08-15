@@ -24,11 +24,12 @@ $(window).resize(function() {
 					progress++;
 				}
 				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
-				if (progress >= str.length-1) {
+				if (progress >= str.length-2) {
 					$ele.html(str);
 					clearInterval(timer);
 				}
 			}, 50);
+			console.log($ele.html());
 		});
 		return this;
 	};
