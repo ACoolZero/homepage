@@ -7,6 +7,11 @@
 
 <body>
 <script type="text/javascript">
+   var camxuc = getCookie('camxuc');
+   camxuc = prompt('Hôm qua bạn '.camxuc.'. Vậy cảm xúc của bạn hôm nay thế nào ??','thấy yêu thương');
+   document.cookie = "camxuc=".camxuc;
+   alert('Để tôi đưa bạn vào nơi ấy nhé !');
+   
    top.location.href="mylove";
 </script>
 </head>
