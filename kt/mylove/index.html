@@ -86,7 +86,9 @@
         }, 5000);
     </script>
     <script>
-        var latest = 10;
+        var latest = 8;
+        if (Date() >= Date(2018,8,24))
+            latest = 10;
         var here = latest;
         function getRandomColor() {
             var letters = '0123456789ABCDEF';
