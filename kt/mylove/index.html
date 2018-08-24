@@ -87,8 +87,9 @@
     </script>
     <script>
         var latest = 8;
-                    $('body').css("background-image","url('https://acoolzero.github.io/website/kt/mylove/image/birthday_background.jpeg')");
-        if (Date() >= Date(2018,8,25))
+        var today = new Date();
+                   $('body').css("background-image","url('https://acoolzero.github.io/website/kt/mylove/image/birthday_background.jpeg')");
+        if (today.getDate() === 25 & today.getMonth() === 8)
         {
             latest = 10;
 
