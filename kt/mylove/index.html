@@ -101,7 +101,8 @@
             var y = (x.contentWindow || x.contentDocument);
             if (y.document)
                 y = y.document;
-            y.getElementById('txtDiary').style.color = getRandomColor();
+            if (here != 9 && here != 10)
+                y.getElementById('txtDiary').style.color = getRandomColor();
         }
         // renxi/functions.js
         function previous() {
