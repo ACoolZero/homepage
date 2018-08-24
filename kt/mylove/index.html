@@ -21,7 +21,7 @@
     <meta http-equiv=”Expires” content=”-1″>
     <meta http-equiv=”CACHE-CONTROL” content=”NO-CACHE”>
 </head>
-<body onLoad="window.scrollTo(0, document.body.scrollHeight)" >
+<body onLoad="window.scrollTo(0, document.body.scrollHeight);" >
     <div id="main">
         <div id="error">
             Trình duyệt của bạn không được hỗ trợ. Bạn nên sử dụng (<a href="http://www.google.com/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)
@@ -87,8 +87,12 @@
     </script>
     <script>
         var latest = 8;
+                    $('body').css("background-image","url('https://acoolzero.github.io/website/kt/mylove/image/birthday_background.jpeg')");
         if (Date() >= Date(2018,8,25))
+        {
             latest = 10;
+
+        }
         var here = latest;
         function getRandomColor() {
             var letters = '0123456789ABCDEF';
