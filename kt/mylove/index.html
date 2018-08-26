@@ -101,8 +101,10 @@
             var y = (x.contentWindow || x.contentDocument);
             if (y.document)
                 y = y.document;
-            if (here != 9 && here != 10)
+            if (here != 9 && here != 10) {
                 y.getElementById('txtDiary').style.color = getRandomColor();
+                $('body').css("background-image","");
+            }
             else {
                 $('body').css("background-image","url('https://acoolzero.github.io/website/kt/mylove/image/birthday_background.jpeg')");
                 $('body').css("background-size","70%");
