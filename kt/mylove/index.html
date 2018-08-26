@@ -87,8 +87,6 @@
     </script>
     <script>
         var latest = 10;
-            $('body').css("background-image","url('https://acoolzero.github.io/website/kt/mylove/image/birthday_background.jpeg')");
-            $('body').css("background-size","70%");
         var here = latest;
         function getRandomColor() {
             var letters = '0123456789ABCDEF';
@@ -105,6 +103,10 @@
                 y = y.document;
             if (here != 9 && here != 10)
                 y.getElementById('txtDiary').style.color = getRandomColor();
+            else {
+                $('body').css("background-image","url('https://acoolzero.github.io/website/kt/mylove/image/birthday_background.jpeg')");
+                $('body').css("background-size","70%");
+            }
         }
         // renxi/functions.js
         function previous() {
